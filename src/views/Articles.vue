@@ -16,7 +16,7 @@
           </div>
         </div>
 
-        <hr class="my-1">
+        <hr class="my-2">
 
         <div class="name">
           <p>{{ name }}</p>
@@ -27,7 +27,7 @@
         <b-row class="d-inline-flex align-items-center">
           <font-awesome-icon
             spin
-            class="text-dark mr-1"
+            class="icon mr-1"
             size='xs'
             :icon="['fa', 'cog']"
           />
@@ -39,7 +39,7 @@
           />
         </b-row>
 
-        <hr class="my-4">
+        <hr class="my-3">
 
         <b-row>
           <a class="circle" @click="redirect(links.linkedin)">
@@ -52,30 +52,17 @@
             <font-awesome-icon class="icon" size='2x' :icon="['fab', 'instagram']" />
           </a>
         </b-row>
-        <b-col class="router">
-          <router-link to="ideas">
-            <b-row class="ml-auto d-md-flex justify-content-center btn-router align-items-center">
-              <p class="name-router">some ideas</p>
-              <font-awesome-icon
-                class="icon-router animated heartBeat"
-                size='2x'
-                :icon="['fa', 'caret-right']"
-              />
-            </b-row>
-          </router-link>
-          <router-link to="ideas">
-            <b-row
-              class="d-md-flex ml-auto mt-3 justify-content-center btn-router align-items-center">
-              <p class="name-router">about</p>
-              <font-awesome-icon
-                class="icon-router animated heartBeat"
-                size='2x'
-                :icon="['fa', 'caret-right']"
-              />
-            </b-row>
-          </router-link>
 
-        </b-col>
+        <router-link class="router" to="/home">
+          <b-row class="d-md-flex justify-content-center btn-router align-items-center">
+            <p class="name-router">home</p>
+            <font-awesome-icon
+              class="icon-router animated heartBeat"
+              size='2x'
+              :icon="['fa', 'caret-right']"
+            />
+          </b-row>
+        </router-link>
 
       </div>
     </b-col>
@@ -118,7 +105,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style style='scss'>
+<style style='scss' scoped>
 
   @import url('https://fonts.googleapis.com/css?family=Abel|Baloo+2&display=swap');
   @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
@@ -129,38 +116,9 @@ export default {
     height: 100vh !important;
     background-color: black;
     background-repeat: no-repeat;
-    background-position: center -5%;
+    background-size: 200%;
+    background-position: center -10%;
     background-image: url('../assets/background.png');
-  }
-  @media (max-width: 400px) {
-    .background {
-      background-size: 230%;
-    }
-  }
-  @media (min-width: 400px) {
-    .background {
-      background-size: 200%;
-    }
-  }
-  @media (min-width: 450px) {
-    .background {
-      background-size: 170%;
-    }
-  }
-  @media (min-width: 600px) {
-    .background {
-      background-size: 130%;
-    }
-  }
-  @media (min-width: 750px) {
-    .background {
-      background-size: 100%;
-    }
-  }
-  @media (min-width: 850px) {
-    .background {
-      background-size: 65%;
-    }
   }
 
   .particles {
@@ -173,32 +131,19 @@ export default {
   }
 
   .header {
-    margin-top: 10vh !important;
+    margin-top: 25% !important;
+    margin-left: 10% !important;
     color: white;
+    width: 60%;
     font-size: 10pt;
     position: absolute;
     z-index: 1;
-  }
-  @media (max-width: 400px) {
-    .header {
-      margin-left: 10% !important;
-      margin-right: 10% !important;
-      width: 80%;
-    }
-  }
-  @media (min-width: 400px) {
-    .header {
-      margin-left: 15% !important;
-      margin-right: 15% !important;
-      width: 70%;
-    }
   }
 
   .menu {
     margin-top: 20% !important;
     margin-left: 10% !important;
   }
-
 
   .item-menu {
     color: #ddd;
@@ -210,27 +155,11 @@ export default {
     color: rgb(0,223,252);
   }
 
-  .router {
-    margin-top: 15vh !important;
-  }
-  @media (min-width: 400px) {
-    .router {
-      margin-top: 12vh !important;
-    }
-  }
-
   .btn-router {
     width: 150px;
-    margin-left: auto;
+    margin-left: 70% !important;
+    margin-top: 40% !important;
     background-color: rgb(52,56,56);
-  }
-  @media (min-width: 1025px) {
-    .btn-router {
-      opacity: 0.7;
-    }
-    .btn-router:hover {
-      opacity: 1;
-    }
   }
 
   .icon-router {
@@ -244,8 +173,6 @@ export default {
     font-size: 17pt;
     width: 110px;
     font-family: Abel, sans-serif;
-    text-decoration: none !important;
-    border: transparent !important;
   }
 
   .name {
@@ -262,9 +189,11 @@ export default {
 
   .vue-typer .custom.char.typed {
     color: #D4D4BD;
+    background-color: red;
     font-size: 8pt;
-    font-family: 'Source Code Pro';
+    font-family: 'Source Code Pro', sans-serif;
   }
+
 
   .vue-typer .custom.caret {
     width: 1px;
@@ -273,8 +202,8 @@ export default {
   }
 
   .hexagon {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     display: block;
     margin: 20px;
     overflow: hidden;
@@ -314,6 +243,7 @@ export default {
   }
 
   .circle {
+
     background-color: rgb(52,56,56);
     border-radius: 100%;
     display: flex;
@@ -322,21 +252,6 @@ export default {
     width: 55px;
     height: 55px;
     margin-right: 5% !important;
-    transition: 0.3s;
-  }
-  @media (max-width: 400px) {
-    .circle {
-      width: 45px !important;
-      height: 45px !important;
-    }
-  }
-  @media (min-width: 1025px) {
-    .circle {
-      opacity: 0.7;
-    }
-    .circle:hover {
-      opacity: 1;
-    }
   }
 
   .urss {
