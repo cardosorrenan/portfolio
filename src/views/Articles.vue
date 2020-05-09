@@ -1,261 +1,161 @@
 <template>
-   <b-row class="background">
-     <b-col>
-      <vue-particles
-        class='particles' color="#8b8b8b" :particleOpacity="0.7"
-        :particlesNumber="80" shapeType="circle" :particleSize="3"
-        linesColor="#6e6e6e" :linesWidth="3" :lineLinked="true"
-        :lineOpacity="0.4" :linesDistance="100" :moveSpeed="1.5"
-        :hoverEffect="true" hoverMode="grab" :clickEffect="true"
-        clickMode="push"
-      />
-      <div class='header'>
-        <div class="hexagon">
-          <div class="hexagon-in1">
-            <div class="hexagon-in2" />
-          </div>
-        </div>
+  <b-col class="rerou">
+    <router-link class='router' to="/">
+      <b-row
+        class="d-md-flex ml-auto mt-3 justify-content-center btn-router align-items-center">
+        <font-awesome-icon
+          class="icon-router animated heartBeat"
+          size='1x'
+          :icon="['fa', 'caret-left']"
+        />
+        <p class="name-router">home</p>
+      </b-row>
+    </router-link>
+    <b-card-group class="card-group" deck>
+      <b-card
+        v-for="(article, i) in articles"
+        :key="i"
+        no-body
+        class="card"
+      >
+        <b-row no-gutters>
 
-        <hr class="my-2">
-
-        <div class="name">
-          <p>{{ name }}</p>
-        </div>
-
-        <hr class="my-1">
-
-        <b-row class="d-inline-flex align-items-center">
-          <font-awesome-icon
-            spin
-            class="icon mr-1"
-            size='xs'
-            :icon="['fa', 'cog']"
-          />
-          <vue-typer
-            :text=array :repeat='Infinity' :shuffle='false'
-            initial-action='typing' :pre-type-delay='50' :type-delay='5'
-            :pre-erase-delay='1200' :erase-delay='10' erase-style='backspace'
-            :erase-on-complete='false' caret-animation='expand'
-          />
-        </b-row>
-
-        <hr class="my-3">
-
-        <b-row>
-          <a class="circle" @click="redirect(links.linkedin)">
-            <font-awesome-icon class="icon" size='2x' :icon="['fab', 'linkedin-in']" />
-          </a>
-          <a class="circle" @click="redirect(links.github)">
-            <font-awesome-icon class="icon" size='2x' :icon="['fab', 'github']" />
-          </a>
-          <a class="circle" @click="redirect(links.instagram)">
-            <font-awesome-icon class="icon" size='2x' :icon="['fab', 'instagram']" />
-          </a>
-        </b-row>
-
-        <router-link class="router" to="/home">
-          <b-row class="d-md-flex justify-content-center btn-router align-items-center">
-            <p class="name-router">home</p>
-            <font-awesome-icon
-              class="icon-router animated heartBeat"
-              size='2x'
-              :icon="['fa', 'caret-right']"
+            <b-card-img
+              :src="article.image"
+              alt="Image"
+              class="image"
             />
-          </b-row>
-        </router-link>
 
-      </div>
-    </b-col>
-  </b-row>
+
+            <b-card-body class="card-body">
+              <h3 class="title">{{ article.title }}</h3>
+              <p class="date ml-auto">{{ article.date }}</p>
+            </b-card-body>
+
+
+        </b-row>
+      </b-card>
+    </b-card-group>
+  </b-col>
 </template>
 
 <script>
-import { VueTyper } from 'vue-typer';
 
 export default {
-  name: 'HelloWorld',
+
   data() {
     return {
-      name: 'Renan Cardoso',
-      array: [
-        ' starting...',
-        ' ',
-        ' graduando engenharia da computação',
-        ' desenvolvedor',
-        ' ',
+      articles: [
+        {
+          image: 'https://picsum.photos/400/400/?image=1',
+          title: 'This is a wider card with supporting text as a natural',
+          date: '27/10/2020',
+        },
+        {
+          image: 'https://picsum.photos/400/400/?image=2',
+          title: 'This content is a little bit longer',
+          date: '04/09/2020',
+        },
+        {
+          image: 'https://picsum.photos/400/400/?image=3',
+          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
+          date: '21/08/2020',
+        },
       ],
-      links: {
-        linkedin: 'https://www.linkedin.com/in/renan-cardoso-0b79b6134/',
-        github: 'https://github.com/cardosorrenan',
-        instagram: 'https://www.instagram.com/cardosorrenan/',
-      },
     };
   },
-  components: {
-    'vue-typer': VueTyper,
-  },
-  methods: {
-    redirect(url) {
-      const goToPage = url;
-      window.open(goToPage, '_target');
-    },
-  },
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style style='scss' scoped>
-
-  @import url('https://fonts.googleapis.com/css?family=Abel|Baloo+2&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
-  .background {
-    width: 100vw !important;
-    height: 100vh !important;
-    background-color: black;
-    background-repeat: no-repeat;
-    background-size: 200%;
-    background-position: center -10%;
-    background-image: url('../assets/background.png');
-  }
-
-  .particles {
+  .rerou {
     position: absolute;
-    top: 0%;
-    left: 0px;
-    z-index: 0;
-    width: 100vw;
-    height: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   }
 
-  .header {
-    margin-top: 25% !important;
-    margin-left: 10% !important;
-    color: white;
-    width: 60%;
-    font-size: 10pt;
-    position: absolute;
-    z-index: 1;
-  }
-
-  .menu {
-    margin-top: 20% !important;
-    margin-left: 10% !important;
-  }
-
-  .item-menu {
-    color: #ddd;
-    font-size: 16pt;
-    font-family: Abel, sans-serif;
-  }
-
-  .icon {
-    color: rgb(0,223,252);
-  }
-
-  .btn-router {
-    width: 150px;
-    margin-left: 70% !important;
-    margin-top: 40% !important;
-    background-color: rgb(52,56,56);
-  }
-
-  .icon-router {
-    color: #ddd;
-    animation-duration: 2s !important;
-    animation-iteration-count: infinite;
+  .router {
+    border: 1px solid red;
   }
 
   .name-router {
     color: rgb(0,223,252);
-    font-size: 17pt;
-    width: 110px;
+    font-size: 10pt;
     font-family: Abel, sans-serif;
+    text-decoration: none !important;
+    border: transparent !important;
   }
 
-  .name {
-    color: #ddd;
-    font-size: 14pt;
-    width: 110px;
-    border-bottom: 3px ridge rgb(0,140,158);
-    font-family: Abel, sans-serif;
-  }
-
-  .vue-typer {
-    background-color: transparent;
-  }
-
-  .vue-typer .custom.char.typed {
-    color: #D4D4BD;
-    background-color: red;
-    font-size: 8pt;
-    font-family: 'Source Code Pro', sans-serif;
-  }
-
-
-  .vue-typer .custom.caret {
-    width: 1px;
-    opacity: 0.75;
-    background-color: #D4D4BD;
-  }
-
-  .hexagon {
-    width: 110px;
-    height: 110px;
-    display: block;
-    margin: 20px;
-    overflow: hidden;
-    visibility: hidden;
-    -webkit-transform: rotate(120deg);
-    -moz-transform: rotate(120deg);
-    -ms-transform: rotate(120deg);
-    -o-transform: rotate(120deg);
-    transform: rotate(120deg);
-    cursor: pointer;
-  }
-
-  .hexagon-in1 {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: rotate(-60deg);
-    -moz-transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    -o-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-  }
-
-  .hexagon-in2 {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center center;
-    background-image: url(https://avatars2.githubusercontent.com/u/48356874?s=460&u=7a51c810b858176066b58eedf36b032991a1464c&v=4);
-    visibility: visible;
-    -webkit-transform: rotate(-60deg);
-    -moz-transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    -o-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-  }
-
-  .circle {
-
-    background-color: rgb(52,56,56);
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    width: 55px;
-    height: 55px;
-    margin-right: 5% !important;
-  }
-
-  .urss {
+  .btn-router {
     border: 1px solid red;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    position: fixed;
+    z-index: 5;
+    right: 10%;
+    bottom: 10%;
+    transition: 2s;
+  }
+
+  .card-group {
+    margin-top: 8vh !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    padding-left: 10px !important;
+    padding-top: 4vw !important;
+    padding-bottom: 4vw !important;
+    padding-right: 10px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card {
+    color: black;
+    background-color: transparent;
+    border: 0px;
+    font-family: Abel, sans-serif;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+    margin-bottom: 20px !important;
+  }
+  .card:hover {
+
+  }
+
+  .image {
+    width: 85px;
+    margin-right: 15px !important;
+    margin-left: 5px !important;
+
+  }
+
+  .title {
+
+    font-size: 10pt;
+
+    width: 50vw;
+    border: 1px solid red;
+
+  }
+
+  .date {
+    text-align: center;
+    margin-right: 5px !important;
+    font-size: 7pt;
+
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
   }
 
 </style>

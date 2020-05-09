@@ -9,7 +9,7 @@
         :hoverEffect="true" hoverMode="grab" :clickEffect="true"
         clickMode="push"
       />
-      <div class='header'>
+      <div class='main-info'>
         <div class="hexagon">
           <div class="hexagon-in1">
             <div class="hexagon-in2" />
@@ -63,7 +63,7 @@
               />
             </b-row>
           </router-link>
-          <router-link to="ideas">
+          <router-link to="about">
             <b-row
               class="d-md-flex ml-auto mt-3 justify-content-center btn-router align-items-center">
               <p class="name-router">about</p>
@@ -124,6 +124,10 @@ export default {
   @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+  html, body {
+    background-color: black;
+  }
+
   .background {
     width: 100vw !important;
     height: 100vh !important;
@@ -172,7 +176,7 @@ export default {
     height: 100%;
   }
 
-  .header {
+  .main-info {
     margin-top: 10vh !important;
     color: white;
     font-size: 10pt;
@@ -180,14 +184,14 @@ export default {
     z-index: 1;
   }
   @media (max-width: 400px) {
-    .header {
+    .main-info {
       margin-left: 10% !important;
       margin-right: 10% !important;
       width: 80%;
     }
   }
   @media (min-width: 400px) {
-    .header {
+    .main-info {
       margin-left: 15% !important;
       margin-right: 15% !important;
       width: 70%;
@@ -211,11 +215,11 @@ export default {
   }
 
   .router {
-    margin-top: 15vh !important;
+    margin-top: 10vh !important;
   }
   @media (min-width: 400px) {
     .router {
-      margin-top: 12vh !important;
+      margin-top: 8vh !important;
     }
   }
 
@@ -322,6 +326,7 @@ export default {
     width: 55px;
     height: 55px;
     margin-right: 5% !important;
+    cursor: pointer;
     transition: 0.3s;
   }
   @media (max-width: 400px) {
@@ -337,10 +342,6 @@ export default {
     .circle:hover {
       opacity: 1;
     }
-  }
-
-  .urss {
-    border: 1px solid red;
   }
 
 </style>
