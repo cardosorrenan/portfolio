@@ -1,5 +1,5 @@
 <template >
-  <vue-page-transition class="bg-black" >
+  <vue-page-transition>
     <router-view />
   </vue-page-transition>
 </template>
@@ -10,8 +10,8 @@
     padding: 0px !important;
   }
 
-  .bg-black {
-    background-color: black;
+  html {
+    background-color: #d2efff;
   }
 
 </style>
