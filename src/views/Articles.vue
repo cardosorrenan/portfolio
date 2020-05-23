@@ -11,14 +11,14 @@
           size='1x'
           :icon="['fa', 'caret-left']"
         />
-        <p class="name-router ml-2">home</p>
+        <p class="name-router mx-2">home</p>
       </b-row>
     </router-link>
 
-    <b-row class="title-page mt-3" align-v="center">
+    <b-row class="title-page" align-v="center">
 
-      <p class="name-router ml-3 mr-3">algumas sinapses p/ bytes</p>
-      <font-awesome-icon class="icon animated wobble ml-2" :icon="['fa', 'mug-hot']" />
+      <p class="title-name ml-3 mr-3">sinapses 2 bytes</p>
+      <font-awesome-icon class="title-icon animated wobble ml-2" :icon="['fa', 'mug-hot']" />
     </b-row>
 
     <b-card-group class="card-group d-inline-flex flex-column">
@@ -52,44 +52,8 @@ export default {
         {
           id: 1,
           image: 'https://picsum.photos/id/85/300/300/',
-          title: 'O primeiro post será sim um hello world utilizando nodeJS e Docker',
-          date: '27/10/2020',
-        },
-        {
-          id: 2,
-          image: 'https://picsum.photos/400/400/?image=1',
-          title: 'This content is a little bit longer',
-          date: '04/09/2020',
-        },
-        {
-          id: 3,
-          image: 'https://picsum.photos/400/400/?image=3',
-          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
-          date: '21/08/2020',
-        },
-        {
-          id: 4,
-          image: 'https://picsum.photos/400/400/?image=3',
-          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
-          date: '21/08/2020',
-        },
-        {
-          id: 5,
-          image: 'https://picsum.photos/400/400/?image=3',
-          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
-          date: '21/08/2020',
-        },
-        {
-          id: 6,
-          image: 'https://picsum.photos/400/400/?image=3',
-          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
-          date: '21/08/2020',
-        },
-        {
-          id: 7,
-          image: 'https://picsum.photos/400/400/?image=3',
-          title: 'Text as a natural lead-in to additional content. This content is a little bit longer.',
-          date: '21/08/2020',
+          title: 'working on something... :D  ',
+          date: 'soon',
         },
       ],
     };
@@ -113,12 +77,10 @@ export default {
 
   .title-page {
     background-color:rgb(52,56,56) ;
-    position: absolute;
-    left: 0px;
-    height: 8vh;
-    width: 70vw;
+    height: 10vh;
+    width: 100vw !important;
   }
-    .title-page .name-router {
+    .title-page .title-name {
       color: rgb(0,223,252);
       font-size: 16pt;
       font-weight: 500;
@@ -126,12 +88,11 @@ export default {
       text-decoration: none !important;
       border: transparent !important;
     }
-    .title-page .icon {
+    .title-page .title-icon {
       color: rgb(0,223,252);
       font-size: 15pt;
       animation-duration: 2s !important;
       animation-iteration-count: infinite;
-
     }
 
   .router .btn-router {
@@ -157,7 +118,7 @@ export default {
   .card-group {
     width: 90vw;
     position: absolute;
-    top: 14vh;
+    top: 13vh;
   }
   @media screen and (min-width: 750px) {
     .card-group {
@@ -171,9 +132,17 @@ export default {
       background-color: white;
       border-radius: 10px;
       border: 0px;
+      display: flex;
+      justify-content: center;
       cursor: pointer;
+      min-height: 25vw;
       box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
       transition: 0.7s;
+    }
+    @media screen and (min-width: 600px) {
+      .card-group .card {
+        min-height: 150px;
+      }
     }
     .card-group .card:hover {
       filter: blur(1px); /* Chrome, Safari, Opera */
@@ -218,7 +187,7 @@ export default {
           justify-content: center;
           width: 15vw;
           opacity: 0.75;
-          font-size: 7pt;
+          font-size: 8pt;
           padding-right: 1vw !important;
         }
         @media screen and (min-width: 750px) {

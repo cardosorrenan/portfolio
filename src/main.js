@@ -9,6 +9,12 @@ import {
   faCaretDown,
   faLightbulb,
   faMugHot,
+  faBroadcastTower,
+  faHandSpock,
+  faMapMarkedAlt,
+  faEnvelope,
+  faFileDownload,
+  faFileExport,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -23,8 +29,9 @@ import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-library.add(faCog, faCaretRight, faCaretLeft, faCaretDown, faCaretUp, faLightbulb,
-  faMugHot, faLinkedinIn, faGithub, faInstagram);
+library.add(faCog, faCaretRight, faCaretLeft, faCaretDown, faCaretUp, faLightbulb, faHandSpock,
+  faMapMarkedAlt, faEnvelope, faMugHot, faBroadcastTower, faLinkedinIn, faGithub, faInstagram,
+  faFileDownload, faFileExport);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 

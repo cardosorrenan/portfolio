@@ -21,9 +21,9 @@
     z-index: 0;
     background-color: black;
     background-repeat: no-repeat;
-
-    background-position: center center;
-    background-image: url('../assets/background.png');
+    background-size: 30%;
+    background-position: 70% 10%;
+    background-image: url('../assets/moonBg.png');
   }
     .background .particles {
       width: 100vw;

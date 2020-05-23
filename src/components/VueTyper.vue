@@ -4,9 +4,9 @@
     :repeat='Infinity'
     :shuffle='false'
     initial-action='typing'
-    :pre-type-delay='50'
-    :type-delay='5'
-    :pre-erase-delay='1200'
+    :pre-type-delay='20'
+    :type-delay='20'
+    :pre-erase-delay='1800'
     :erase-delay='10'
     erase-style='backspace'
     :erase-on-complete='false'
@@ -26,10 +26,10 @@ export default {
     return {
       array: [
         ' starting...',
-        ' ',
-        ' graduando engenharia da computação &',
-        ' desenvolvedor &',
-        ' eterno aprendiz da tecnologia!',
+        ' hello!',
+        ' stay safe...',
+        ' stay in home!',
+        ' rebooting',
         ' ',
       ],
     };

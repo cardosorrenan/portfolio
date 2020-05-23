@@ -3,18 +3,18 @@
       <home-background />
       <b-row class="main w-100 h-100">
         <b-col cols="12" class="infos h-100">
-          <img
+        <!--   <img
             :src="linkAvatar"
             class="rounded-circle my-2"
             width="100"
             height="100"
           >
-
+ -->
           <div class="name my-2">
             <p>{{ name }}</p>
           </div>
 
-          <b-row class="d-inline-flex align-items-center mb-4">
+          <b-row class="d-inline-flex align-items-center mb-5">
             <font-awesome-icon
               class="text-dark mr-1"
               :icon="['fa', 'cog']"
@@ -37,10 +37,10 @@
           </b-row>
 
           <b-col class="mt-5 pt-5">
-            <router-link to="ideas">
+           <!--  <router-link to="ideas">
               <b-row class="btn-router text-center ml-auto">
                 <b-col cols="10">
-                  <p class="pl-2 name-router">posts</p>
+                  <p class="pl-2 name-router">ideas.</p>
                 </b-col>
                 <b-col class="pr-3" cols="2">
                   <font-awesome-icon
@@ -50,11 +50,11 @@
                   />
                 </b-col>
               </b-row>
-            </router-link>
+            </router-link> -->
             <router-link to="about">
               <b-row class="btn-router text-center ml-auto mt-3">
                 <b-col cols="10">
-                  <p class="pl-3 name-router">about</p>
+                  <p class="pl-3 name-router">about.</p>
                 </b-col>
                 <b-col class="pr-3" cols="2">
                   <font-awesome-icon
@@ -66,9 +66,13 @@
               </b-row>
             </router-link>
           </b-col>
+
         </b-col>
+        <footer class="footer">Made with Vue and ❤</footer>
       </b-row>
+
    </b-row>
+
 </template>
 
 <script>
@@ -82,7 +86,7 @@ export default {
       name: 'Renan Cardoso',
       linkAvatar: 'https://avatars2.githubusercontent.com/u/48356874?s=460&u=7a51c810b858176066b58eedf36b032991a1464c&v=4',
       links: {
-        linkedin: 'https://www.linkedin.com/in/renan-cardoso-0b79b6134/',
+        linkedin: 'https://www.linkedin.com/in/cardosorrenan/',
         github: 'https://github.com/cardosorrenan',
         instagram: 'https://www.instagram.com/cardosorrenan/',
       },
@@ -120,8 +124,8 @@ export default {
       .main .infos .name {
         color: #ddd;
         font-size: 14pt;
-        width: 110px;
-        border-bottom: 3px ridge rgb(0,140,158);
+        width: 130px;
+        border-bottom: 2px ridge gray;
         font-family: Abel, sans-serif;
       }
       .main .infos .circle {
@@ -129,6 +133,7 @@ export default {
         border-radius: 100%;
         display: flex;
         align-items: center;
+        opacity: 0.7;
         justify-content:center;
         width: 55px;
         height: 55px;
@@ -142,7 +147,6 @@ export default {
 
       .main .infos .btn-router {
         width: 150px;
-
         background-color: rgb(52,56,56);
 
       }
@@ -160,8 +164,8 @@ export default {
           font-family: Abel, sans-serif;
         }
 
-      @media (min-width: 1025px) {
-         .main .infos .btn-router {
+      @media (min-width: 1000px) {
+        .main .infos .btn-router {
           opacity: 0.7;
         }
          .main .infos .btn-router:hover {
@@ -174,5 +178,19 @@ export default {
           opacity: 1;
         }
       }
-
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5px;
+    width: 100vw;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%,
+     rgba(255,255,255,0.05) 49%, rgba(0,0,0,1) 100%);
+    color: rgba(255,255,255,0.2);
+    height: 20px;
+    font-size: 10pt;
+    font-family: 'Inconsolata', monospace;
+  }
 </style>

@@ -10,8 +10,9 @@
     padding: 0px !important;
   }
 
-  html {
+  html, body {
     background-color: #d2efff;
+    min-height: 100vh;
   }
 
 </style>
